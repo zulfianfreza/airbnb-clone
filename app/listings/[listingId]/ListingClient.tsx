@@ -6,7 +6,7 @@ import ListingInfo from "@/components/listings/ListingInfo";
 import ListingReservation from "@/components/listings/ListingReservation";
 import { categories } from "@/components/navbar/Categories";
 import useLoginModal from "@/hooks/useLoginModal";
-import { SafeListing, SafeReservations, SafeUser } from "@/types";
+import { SafeListing, SafeReservation, SafeUser } from "@/types";
 import axios from "axios";
 import { differenceInCalendarDays, eachDayOfInterval } from "date-fns";
 import { useRouter } from "next/navigation";
@@ -23,7 +23,7 @@ const initialDateRange = {
 interface ListingClientProps {
     listing: SafeListing & { user: SafeUser };
     currentUser?: SafeUser | null;
-    reservation?: SafeReservations[];
+    reservation?: SafeReservation[];
 }
 
 export default function ListingClient({
